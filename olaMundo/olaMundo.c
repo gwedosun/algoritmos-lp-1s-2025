@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main(int argc, char* argv[]){
-    printf('Haja paciência com configuração de coisas.');
+    printf('Oi, hoje é sexta-feira.');
     return 0;
 };
