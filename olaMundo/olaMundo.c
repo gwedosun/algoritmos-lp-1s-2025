@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <stdio.h> /*biblioteca padrão*/
 
 int main(int argc, char* argv[]){
-    printf('Oi, hoje é sexta-feira.');
+    printf("Hello, world.");
     return 0;
-};
+}
