@@ -1,61 +1,65 @@
 #include <stdio.h>
 
-// assistente de escolha e sugestão de filmes.
+// Assistente de escolha e sugestão de filmes
 
-int main(int argc, char *argv[]){
-    char escolha;
-    float leve, intenso;
+int main() {
+    char tipoFilme, genero, subtipo;
 
-    printf("Escolha o tipo de filme: ");
-    printf("L, para leve; I, para intenso. ");
+    printf("Escolha o tipo de filme:\n");
+    printf("L, para leve; I, para intenso: ");
+    scanf(" %c", &tipoFilme); 
 
-    scanf("%c", &escolha); 
+    if (tipoFilme == 'L') {
+        printf("\nVoce escolheu filme leve.\n");
+        printf("Escolha o genero do filme:\n");
+        printf("C, para comedia; A, para animacao: ");
+        scanf(" %c", &genero);
 
-    printf("\nVoce escolheu o tipo de filme: %c\n", escolha);
-    getchar(); 
-    
-    printf("Escolha o genero do filme: ");
-    printf("C, para comedia; A, para animação.");
-    scanf("%c", &escolha);
-    getchar();
-        if (escolha == 'L'){
-            if (escolha == 'C'){
-                printf("O filme sugerido eh As Branquelas.");
-            } else if (escolha == 'A'){
-                printf("O filme sugerido eh O Rei Leao.");
+        if (genero == 'C') {
+            printf("\nO filme sugerido eh \"As Branquelas\".\n");
+        } else if (genero == 'A') {
+            printf("\nO filme sugerido eh \"O Rei Leao\".\n");
+        } else {
+            printf("\nOpcao invalida.\n");
+        }
+
+    } else if (tipoFilme == 'I') {
+        printf("\nVoce escolheu filme intenso.\n");
+        printf("\nEscolha o genero do filme:\n");
+        printf("T, para terror; A, para acao: ");
+        scanf(" %c", &genero);
+
+        if (genero == 'T') {
+            printf("P, para terror psicologico; S, para terror sobrenatural: ");
+            scanf(" %c", &subtipo);
+
+            if (subtipo == 'P') {
+                printf("\nO filme sugerido eh \"O Silencio dos Inocentes\".\n");
+            } else if (subtipo == 'S') {
+                printf("\nO filme sugerido eh \"O Exorcista\".\n");
             } else {
-                printf('Opcao invalida');
-            };
+                printf("\nOpcao invalida.\n");
+            }
 
-    printf("Escolha o genero do filmes: ");
-    printf("T, para terror; A, para acao. ");
-    scanf("%c", &escolha);
-    getchar();
-        if (escolha == 'I'){
-            if (escolha == 'T'){
-                printf("P para terror psicologico; S para terror sobrenatural");
-                scanf("%c, escolha");
-                getchar();
-                if (escolha == 'P'){
-                    printf("O filme sugerido eh O Silencio dos Inocentes.");
-                    } else if (escolha == 'S'){
-                        printf("O filme sugerido eh O Exorcista.");
-                        } else {
-                            printf("Opcao invalida.");
-                        };
-            if (escolha == A){
-                printf("H, para super-herois; R, para realista.");
-                scanf("%c", %escolha);
-                getchar();
-                    if (escolha == H){
-                        printf("O filme sugerido eh O Cavaleiro das Trevas.");
-                        } else if (escolha == R){
-                            printf("O filme sugerido eh Mad Max: Estrada da Furia.");
-                            } else {
-                                printf("Opcao invalida.");
-                                };
-            };
+        } else if (genero == 'A') {
+            printf("H, para super-herois; R, para realista: ");
+            scanf(" %c", &subtipo);
 
+            if (subtipo == 'H') {
+                printf("\nO filme sugerido eh \"Batman: O Cavaleiro das Trevas\".\n");
+            } else if (subtipo == 'R') {
+                printf("\nO filme sugerido eh \"Mad Max: Estrada da Furia\".\n");
+            } else {
+                printf("\nOpcao invalida.\n");
+            }
+
+        } else {
+            printf("\nOpcao invalida.\n");
+        }
+
+    } else {
+        printf("\nOpcao invalida.\n");
+    }
 
     return 0;
 }
