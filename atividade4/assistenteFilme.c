@@ -15,13 +15,13 @@ int main() {
         printf("C, para comedia; A, para animacao: ");
         scanf(" %c", &genero);
 
-        if (genero == 'C') {
-            printf("\nO filme sugerido eh \"As Branquelas\".\n");
-        } else if (genero == 'A') {
-            printf("\nO filme sugerido eh \"O Rei Leao\".\n");
-        } else {
-            printf("\nOpcao invalida.\n");
-        }
+            if (genero == 'C') {
+                printf("\nO filme sugerido eh \"As Branquelas\".\n");
+            } else if (genero == 'A') {
+                printf("\nO filme sugerido eh \"O Rei Leao\".\n");
+            } else {
+                printf("\nOpcao invalida.\n");
+            }
 
     } else if (tipoFilme == 'I') {
         printf("\nVoce escolheu filme intenso.\n");
@@ -29,21 +29,21 @@ int main() {
         printf("T, para terror; A, para acao: ");
         scanf(" %c", &genero);
 
-        if (genero == 'T') {
-            printf("P, para terror psicologico; S, para terror sobrenatural: ");
-            scanf(" %c", &subtipo);
+            if (genero == 'T') {
+                printf("P, para terror psicologico; S, para terror sobrenatural: ");
+                scanf(" %c", &subtipo);
 
-            if (subtipo == 'P') {
-                printf("\nO filme sugerido eh \"O Silencio dos Inocentes\".\n");
-            } else if (subtipo == 'S') {
-                printf("\nO filme sugerido eh \"O Exorcista\".\n");
-            } else {
-                printf("\nOpcao invalida.\n");
-            }
+                if (subtipo == 'P') {
+                    printf("\nO filme sugerido eh \"O Silencio dos Inocentes\".\n");
+                } else if (subtipo == 'S') {
+                    printf("\nO filme sugerido eh \"O Exorcista\".\n");
+                } else {
+                    printf("\nOpcao invalida.\n");
+                }
 
-        } else if (genero == 'A') {
-            printf("H, para super-herois; R, para realista: ");
-            scanf(" %c", &subtipo);
+            } else if (genero == 'A') {
+                printf("H, para super-herois; R, para realista: ");
+                scanf(" %c", &subtipo);
 
             if (subtipo == 'H') {
                 printf("\nO filme sugerido eh \"Batman: O Cavaleiro das Trevas\".\n");
