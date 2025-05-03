@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_CONSULTAS 100
+#define MAX_CONSULTAS 50
 
     typedef struct {
         int id;
@@ -64,9 +64,9 @@
         for (int i = 0; i < contador; i++) {
             if (consultas[i].id == id) {
                 for (int j = i; j < contador - 1; j++) {
-                    consultas[j] = consultas[j + 1];  // Move os elementos
+                    consultas[j] = consultas[j + 1]; 
                 }
-                contador--;  // Reduz o número de consultas
+                contador--;  // reduz o número de consultas
                 printf("Consulta excluída com sucesso!\n");
                 return;
             }
@@ -96,14 +96,19 @@
             scanf("%d", &opcao);
     
             switch(opcao) {
-                case 1: criarConsulta(); break;
-                case 2: listarConsultas(); break;
-                case 3: atualizarConsulta(); break;
-                case 4: excluirConsulta(); break;
-                case 5: printf("Saindo do programa...\n"); break;
+                case 1: criarConsulta(); 
+                break;
+                case 2: listarConsultas(); 
+                break;
+                case 3: atualizarConsulta(); 
+                break;
+                case 4: excluirConsulta(); 
+                break;
+                case 5: printf("Saindo do programa...\n"); 
+                break;
                 default: printf("Opção inválida.\n");
             }
-        } while(opcao != 5);
+        } while (opcao != 5);
     }
     
 
