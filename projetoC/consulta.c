@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdlib.h> // exit()
+#include <string.h> // strings 
 
 #define MAX_CONSULTAS 50
 
@@ -31,7 +31,7 @@ void escolherEspecialidade(char especialidade[]) {
         case 5: strcpy(especialidade, "Nutrologia"); break;
         case 6: strcpy(especialidade, "Cardiologia"); break;
         case 7: strcpy(especialidade, "Otorrinolaringologia"); break;
-        default: strcpy(especialidade, "Especialidade nao Definida");
+        default: strcpy(especialidade, "Especialidade nao definida");
     }
 }
 
@@ -47,7 +47,7 @@ void criarConsulta() {
         scanf(" %[^\n]", consultas[contador].data);
         strcpy(consultas[contador].status, "Agendada.");
         contador++;
-        printf("Consulta agendada com sucesso!\n");
+        printf("Consulta agendada com sucesso! O seu ID da consulta eh %d.\n", consultas[contador - 1].id);
     } else {
         printf("Limite de consultas atingido.\n");
     }
@@ -60,14 +60,14 @@ void atualizarConsulta() {
 
     for (int i = 0; i < contador; i++) {
         if (consultas[i].id == id) {
-            printf("Novo nome do paciente: ");
+            printf("Novo nome do paciente: \nCaso não deseje alterar, repita o nome.");
             scanf(" %[^\n]", consultas[i].paciente);
-            printf("Nova data de nascimento: ");
+            printf("Nova data de nascimento: \nCaso não deseje alterar, repita a data.");
             scanf(" %[^\n]", consultas[i].dataNascimento);
             escolherEspecialidade(consultas[i].especialidade);
             printf("Nova data da consulta: ");
             scanf(" %[^\n]", consultas[i].data);
-            printf("Status da consulta (Agendada/Finalizada): ");
+            printf("Status da consulta (Agendada/Reagendada): ");
             scanf(" %[^\n]", consultas[i].status);
 
             printf("Consulta atualizada com sucesso!\n");
@@ -96,7 +96,7 @@ void excluirConsulta() {
 }
 
 void listarConsultas() {
-    printf("\nLista de Consultas Medicas:\n");
+    printf("\nLista de consultas marcadas:\n");
     for (int i = 0; i < contador; i++) {
         printf("ID: %d | Paciente: %s | Data de Nascimento: %s | Especialidade: %s | Data: %s | Status: %s\n",
             consultas[i].id, 
@@ -126,7 +126,7 @@ void menuPrincipal() {
             case 3: atualizarConsulta(); break;
             case 4: excluirConsulta(); break;
             case 5: printf("Saindo do programa...\n"); break;
-            default: printf("opcao invalida.\n");
+            default: printf("Opcao invalida.\n");
         }
     } while (opcao != 5);
 }
