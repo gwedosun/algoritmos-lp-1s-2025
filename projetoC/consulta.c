@@ -60,6 +60,9 @@ void atualizarConsulta() {
 
     for (int i = 0; i < contador; i++) {
         if (consultas[i].id == id) {
+            printf("Novo nome do paciente: (Caso nao deseje alterar, repita o nome.)");
+            scanf(" %[^\n]", consultas[i].paciente);
+            printf("Nova data de nascimento: (Caso nao deseje alterar, repita a data.)");
             printf("Novo nome do paciente: (Caso nao deseje alterar, repita o nome.");
             scanf(" %[^\n]", consultas[i].paciente);
             printf("Nova data de nascimento: (Caso nao deseje alterar, repita a data.");
