@@ -1,9 +1,12 @@
-#include <stdio.h>
+#include <stdio.h> // biblioteca padrão
 #include <stdlib.h> // exit()
 #include <string.h> // strings 
 
-#define MAX_CONSULTAS 50
+// limitador de consultas no "banco"
+#define MAX_CONSULTAS 50 
 
+
+// estrutura 
 typedef struct {
     int id;
     char paciente[50];
@@ -13,9 +16,13 @@ typedef struct {
     char status[20];
 } consulta;
 
+
+// definição de variaveis
 consulta consultas[MAX_CONSULTAS];
 int contador = 0;
 
+
+// funçao para escolha da especialidade usando switch-case
 void escolherEspecialidade(char especialidade[]) {
     int opcao;
     printf("\nEscolha a especialidade:\n");
@@ -35,6 +42,8 @@ void escolherEspecialidade(char especialidade[]) {
     }
 }
 
+
+// inicio das funções do menu principal
 void criarConsulta() {
     if (contador < MAX_CONSULTAS) {
         consultas[contador].id = contador + 1;
@@ -135,6 +144,6 @@ void menuPrincipal() {
 }
 
 int main() {
-    menuPrincipal();
+    menuPrincipal(); // chama a função principal
     return 0;
 }
