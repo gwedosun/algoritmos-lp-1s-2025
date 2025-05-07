@@ -1,3 +1,6 @@
+## Membros do grupo 4:
+### Beatriz Evangelista, Elise Sugiyama, Fernanda Mendes, Gabriella Braga e Guilherme Magalhães.
+
 # Explicação básica do código
 
 ## 1. Inclusão de bibliotecas padrão:
