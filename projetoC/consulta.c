@@ -74,7 +74,7 @@ void atualizarConsulta() {
             printf("Nova data de nascimento: (Caso nao deseje alterar, repita a data.)");
             printf("Novo nome do paciente: (Caso nao deseje alterar, repita o nome.");
             scanf(" %[^\n]", consultas[i].paciente);
-            printf("Nova data de nascimento: (Caso nao deseje alterar, repita a data.");
+            printf("Nova data de nascimento: (Caso nao deseje alterar, repita a data.)");
             scanf(" %[^\n]", consultas[i].dataNascimento);
             escolherEspecialidade(consultas[i].especialidade);
             printf("Nova data da consulta: ");
