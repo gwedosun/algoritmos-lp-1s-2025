@@ -122,6 +122,8 @@ void listarConsultas() {
 
 void menuPrincipal() {
     int opcao;
+    char entrada[10]; // buffer para entrada do usuario
+
     do {
         printf("\nMenu Principal\n");
         printf("1. Criar Consulta\n");
@@ -130,20 +132,25 @@ void menuPrincipal() {
         printf("4. Excluir Consulta\n");
         printf("5. Sair\n");
         printf("Escolha uma opcao: ");
-        scanf("%d", &opcao);
+
+        fgets(entrada, sizeof(entrada), stdin); // ler entrada como string
+        if (sscanf(entrada, "%d", &opcao) != 1) { 
+            printf("Erro: Entrada invalida. Por favor, digite um numero.\n");
+            continue; // volta para o início do loop
+        }
 
         switch(opcao) {
-            case 1: criarConsulta(); break;
-            case 2: listarConsultas(); break;
-            case 3: atualizarConsulta(); break;
-            case 4: excluirConsulta(); break;
+            case 1: printf("Criar Consulta\n"); break;
+            case 2: printf("Listar Consultas\n"); break;
+            case 3: printf("Atualizar Consulta\n"); break;
+            case 4: printf("Excluir Consulta\n"); break;
             case 5: printf("Saindo do programa...\n"); break;
-            default: printf("Opcao invalida.\n");
+            default: printf("Opcao invalida. Escolha entre 1 e 5.\n");
         }
     } while (opcao != 5);
 }
 
 int main() {
-    menuPrincipal(); // chama a função principal
+    menuPrincipal();
     return 0;
 }
