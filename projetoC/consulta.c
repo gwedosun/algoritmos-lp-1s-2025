@@ -1,12 +1,9 @@
 #include <stdio.h> // biblioteca padrão
-#include <stdlib.h> // exit()
-#include <string.h> // strings 
+#include <string.h> // biblioteca de strings
 
-// limitador de consultas no "banco"
-#define MAX_CONSULTAS 50 
+#define MAX_CONSULTAS 50
 
-
-// estrutura 
+// estrutura
 typedef struct {
     int id;
     char paciente[50];
@@ -16,21 +13,18 @@ typedef struct {
     char status[20];
 } consulta;
 
-
-// definição de variaveis
 consulta consultas[MAX_CONSULTAS];
 int contador = 0;
 
-
-// funçao para escolha da especialidade usando switch-case
+// Função para escolher a especialidade
 void escolherEspecialidade(char especialidade[]) {
     int opcao;
     printf("\nEscolha a especialidade:\n");
     printf("1. Pediatria\n2. Endocrinologia\n3. Dermatologia\n4. Ginecologia\n5. Nutrologia\n6. Cardiologia\n7. Otorrinolaringologia\n");
-    printf("opcao: ");
+    printf("Opcao: ");
     scanf("%d", &opcao);
 
-    switch(opcao) {
+    switch (opcao) {
         case 1: strcpy(especialidade, "Pediatria"); break;
         case 2: strcpy(especialidade, "Endocrinologia"); break;
         case 3: strcpy(especialidade, "Dermatologia"); break;
@@ -43,7 +37,8 @@ void escolherEspecialidade(char especialidade[]) {
 }
 
 
-// inicio das funções do menu principal
+// inicio das funções especificas
+
 void criarConsulta() {
     if (contador < MAX_CONSULTAS) {
         consultas[contador].id = contador + 1;
@@ -51,12 +46,12 @@ void criarConsulta() {
         scanf(" %[^\n]", consultas[contador].paciente);
         printf("Data de nascimento: ");
         scanf(" %[^\n]", consultas[contador].dataNascimento);
-        escolherEspecialidade(consultas[contador].especialidade); 
+        escolherEspecialidade(consultas[contador].especialidade);
         printf("Data da consulta: ");
         scanf(" %[^\n]", consultas[contador].data);
-        strcpy(consultas[contador].status, "Agendada.");
+        strcpy(consultas[contador].status, "Agendada");
+        printf("Consulta agendada com sucesso! O ID é %d.\n", consultas[contador].id);
         contador++;
-        printf("Consulta agendada com sucesso! O seu ID da consulta eh %d.\n", consultas[contador - 1].id);
     } else {
         printf("Limite de consultas atingido.\n");
     }
@@ -69,19 +64,15 @@ void atualizarConsulta() {
 
     for (int i = 0; i < contador; i++) {
         if (consultas[i].id == id) {
-            printf("Novo nome do paciente: (Caso nao deseje alterar, repita o nome.)");
+            printf("Novo nome do paciente (ou repita o atual): ");
             scanf(" %[^\n]", consultas[i].paciente);
-            printf("Nova data de nascimento: (Caso nao deseje alterar, repita a data.)");
-            printf("Novo nome do paciente: (Caso nao deseje alterar, repita o nome.");
-            scanf(" %[^\n]", consultas[i].paciente);
-            printf("Nova data de nascimento: (Caso nao deseje alterar, repita a data.)");
+            printf("Nova data de nascimento (ou repita a atual): ");
             scanf(" %[^\n]", consultas[i].dataNascimento);
             escolherEspecialidade(consultas[i].especialidade);
             printf("Nova data da consulta: ");
             scanf(" %[^\n]", consultas[i].data);
             printf("Status da consulta (Agendada/Reagendada): ");
             scanf(" %[^\n]", consultas[i].status);
-
             printf("Consulta atualizada com sucesso!\n");
             return;
         }
@@ -97,9 +88,9 @@ void excluirConsulta() {
     for (int i = 0; i < contador; i++) {
         if (consultas[i].id == id) {
             for (int j = i; j < contador - 1; j++) {
-                consultas[j] = consultas[j + 1]; 
+                consultas[j] = consultas[j + 1];
             }
-            contador--;  // reduz o número de consultas
+            contador--;
             printf("Consulta excluida com sucesso!\n");
             return;
         }
@@ -108,21 +99,21 @@ void excluirConsulta() {
 }
 
 void listarConsultas() {
-    printf("\nLista de consultas marcadas:\n");
+    printf("\nLista de consultas:\n");
     for (int i = 0; i < contador; i++) {
-        printf("ID: %d | Paciente: %s | Data de Nascimento: %s | Especialidade: %s | Data: %s | Status: %s\n",
-            consultas[i].id, 
-            consultas[i].paciente, 
-            consultas[i].dataNascimento, 
-            consultas[i].especialidade, 
-            consultas[i].data, 
-            consultas[i].status);
+        printf("ID: %d | Paciente: %s | Nascimento: %s | Especialidade: %s | Data: %s | Status: %s\n",
+               consultas[i].id,
+               consultas[i].paciente,
+               consultas[i].dataNascimento,
+               consultas[i].especialidade,
+               consultas[i].data,
+               consultas[i].status);
     }
 }
 
 void menuPrincipal() {
     int opcao;
-    char entrada[10]; // buffer para entrada do usuario
+    char entrada[10];
 
     do {
         printf("\nMenu Principal\n");
@@ -133,20 +124,21 @@ void menuPrincipal() {
         printf("5. Sair\n");
         printf("Escolha uma opcao: ");
 
-        fgets(entrada, sizeof(entrada), stdin); // ler entrada como string
-        if (sscanf(entrada, "%d", &opcao) != 1) { 
-            printf("Erro: Entrada invalida. Por favor, digite um numero.\n");
-            continue; // volta para o início do loop
+        fgets(entrada, sizeof(entrada), stdin);
+
+        if (sscanf(entrada, "%d", &opcao) != 1 || opcao < 1 || opcao > 5) {
+            printf("Erro: Entrada invalida. Digite um numero entre 1 e 5.\n");
+            continue;
         }
 
-        switch(opcao) {
-            case 1: printf("Criar Consulta\n"); break;
-            case 2: printf("Listar Consultas\n"); break;
-            case 3: printf("Atualizar Consulta\n"); break;
-            case 4: printf("Excluir Consulta\n"); break;
+        switch (opcao) {
+            case 1: criarConsulta(); break;
+            case 2: listarConsultas(); break;
+            case 3: atualizarConsulta(); break;
+            case 4: excluirConsulta(); break;
             case 5: printf("Saindo do programa...\n"); break;
-            default: printf("Opcao invalida. Escolha entre 1 e 5.\n");
         }
+
     } while (opcao != 5);
 }
 
@@ -154,3 +146,8 @@ int main() {
     menuPrincipal();
     return 0;
 }
+
+// vantagens de usar void em vez de escrever tudo dentro da int main().
+// organizacao
+// reutilizacao do codigo facilitada, ou seja, menos redundancia no cod
+// facilidade de manutenção
