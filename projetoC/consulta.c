@@ -50,7 +50,7 @@ void criarConsulta() {
         printf("Data da consulta: ");
         scanf(" %[^\n]", consultas[contador].data);
         strcpy(consultas[contador].status, "Agendada");
-        printf("Consulta agendada com sucesso! O ID é %d.\n", consultas[contador].id);
+        printf("Consulta agendada com sucesso! O ID eh %d.\n", consultas[contador].id);
         contador++;
     } else {
         printf("Limite de consultas atingido.\n");
