@@ -150,4 +150,8 @@ int main() {
 // vantagens de usar void em vez de escrever tudo dentro da int main().
 // organizacao
 // reutilizacao do codigo facilitada, ou seja, menos redundancia no cod
+<<<<<<< HEAD
 // facilidade de manutenção
+=======
+// facilidade de manutenção
+>>>>>>> 192ef6c1f3c96718f0d6454b4468a0636489bd8c
