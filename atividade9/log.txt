@@ -1,0 +1,107 @@
+Valor minimo: 20
+ Valor maximo: 50
+ Valor sorteado: 41
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 20
+ Valor maximo: 50
+ Valor sorteado: 48
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 20
+ Valor maximo: 50
+ Valor sorteado: 23
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 20
+ Valor maximo: 50
+ Valor sorteado: 30
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 20
+ Valor maximo: 50
+ Valor sorteado: 36
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 20
+ Valor maximo: 50
+ Valor sorteado: 43
+ Resultado: Não sorteado
+
+
+
+Argumento invalido.
+Argumento invalido.
+Argumento invalido.
+Argumento invalido.
+Argumento invalido.
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 13
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 13
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 11
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 15
+ Resultado: Sorteado
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 18
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 18
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 10
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 10
+ Resultado: Não sorteado
+
+
+
+Valor minimo: 10
+ Valor maximo: 20
+ Valor sorteado: 13
+ Resultado: Não sorteado
+
+
+

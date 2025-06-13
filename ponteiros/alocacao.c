@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 typedef struct {
     int x;
@@ -12,6 +13,9 @@ int main(int argc, char *argv[]){
     int x;
     float y;
     Ponto *numeros;
+    int soma_x = 0;
+    float soma_y = 0.0, media_x = 0.0, media_y = 0.0;
+    float inclinacao_dividendo = 0.0, inclinacao_divisor = 0.0;
 
     FILE *dados = fopen("dados_regressao.csv", "r");
 
@@ -31,16 +35,27 @@ int main(int argc, char *argv[]){
     if(numeros != NULL){
         int i = 0;
         fseek(dados, 0, SEEK_SET);
+        soma_x = 0;
+        soma_y = 0.0;
         while (fscanf(dados, "%d, %f", &x, &y) != EOF){
             numeros[i].x = x;
             numeros[i].y = y;
+            soma_x += x;
+            soma_y += y;
             i++;
         }
+        media_x = (float)soma_x / qtdLinhas;
+        media_y = soma_y / qtdLinhas;
     }
 
     for(int i = 0; i < qtdLinhas; i++){
-        printf("%d, %.2f\n", numeros[i].x, numeros[i].y);
+        inclinacao_dividendo += (numeros[i].x - media_x) * (numeros[i].y - media_y);
+        inclinacao_divisor += (numeros[i].x - media_x) * (numeros[i].x - media_x);
     }
+
+    float a = inclinacao_dividendo / inclinacao_divisor;
+    float b = media_y - a * media_x;
+    printf("%.2fx + %.2f\n", a, b);
 
     fclose(dados);
 
