@@ -40,7 +40,7 @@ if(esperado < min || esperado > max){
     fclose(log);
 
     if(numSorteado == esperado){
-        printf("Parabens, voce acertou o numero sorteado.\n");
+        printf("Parabens, voce acertou o numero sorteado!\n");
     } else {
         printf("Nao foi dessa vez! O numero sorteado foi %d.\n", numSorteado);
     }
